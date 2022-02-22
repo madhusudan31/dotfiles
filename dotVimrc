@@ -1,0 +1,89 @@
+set ruler
+set number relativenumber
+set ts=2 sts=2 sw=2 expandtab
+set autoindent
+set hlsearch incsearch smartcase ignorecase
+set nobackup nowritebackup noswapfile
+set laststatus=2
+set path+=**
+
+syntax enable
+
+
+" ------------------------- Langauge Settings ---------------------------
+" vim-repl configuration
+
+let g:repl_exit_commands = {
+			\	'ipython': 'exit()',
+			\	'zsh': 'exit',
+			\	'default': 'exit',
+			\	}
+
+let g:repl_python_automerge = 1
+let g:repl_ipython_version = '8.0.1'
+nnoremap <leader>r :REPLToggle<Cr>
+nnoremap <leader>e :REPLSendSession<Cr>
+
+" ------------------------- Langauge Settings ---------------------------
+
+" Fortran Settings
+let fortran_free_source=1
+let fortran_do_enddo=1
+
+" ------------------------- Vim Settings ---------------------------
+" Resize buffers when window changes size
+autocmd VimResized * execute "normal! \<c-w>="
+
+" Remove trailing whitespace
+autocmd BufWritePre * :%s/\s\+$//e
+
+" Remove border around vertical split
+highlight VertSplit cterm=NONE
+
+" Changing window splits
+nnoremap <silent> <c-h> :wincmd h<CR>
+nnoremap <silent> <c-j> :wincmd j<CR>
+nnoremap <silent> <c-k> :wincmd k<CR>
+nnoremap <silent> <c-l> :wincmd l<CR>
+
+" Resize windows
+nnoremap <leader>h :vertical resize -2<CR>
+nnoremap <leader>l :vertical resize +2<CR>
+nnoremap <leader>j :resize -2<CR>
+nnoremap <leader>k :resize +2<CR>
+
+" View current file and current directory
+nnoremap <leader>fv :Vex<bar>set winfixwidth<CR>
+nnoremap <leader>dv :Lex<bar>set winfixwidth<CR>
+
+" Terminal mappings
+tnoremap <Esc> <c-\><c-n>
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+tnoremap <C-k> <C-\><C-n><C-w>k
+tnoremap <C-l> <C-\><C-n><C-w>l
+
+" Get the syntax group
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+
+"Strictly Vim
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
+" =====================================================================
+" useful tricks
+" Ctrl-x Ctrl-f: does the autocompletion for path while in insert mode
+" ctrl-n or Ctrl-p shortcuts to move up and down.
+" Codefolding - zf(motion) e.g. zf9j folds next 9 lines, and za to unfold.
