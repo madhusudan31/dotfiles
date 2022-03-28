@@ -1,0 +1,66 @@
+/* Change BG of navigation (File, Edit, View etc.)*/
+.navbar-default {
+  background: none;
+}
+
+/* Background color of the body elemnt */
+.notebook_app {
+  background: white !important;
+}
+
+/* Hide the border between the cells */
+/*
+div.input_area {
+    border: none;
+    border-radius: 0;
+    background: #f7f7f7;
+    line-height: 1.5em;
+    margin: 0.5em 0;
+    padding: 0;
+}
+*/
+
+#notebook-container{
+    box-shadow: none !important;
+    background-color: white;
+}
+
+/* Adding animation effect to the selected cell - zoomed in */
+/*
+div.cell {
+    transition: all 0.25s;
+    border: none;
+    position: relative;
+    top: 0;
+}
+div.cell.selected, div.cell.selected.jupyter-soft-selected {
+    border: none;
+    background: transparent;
+    box-shadow: 0 6px 18px #aaa;
+    z-index: 10;
+    top: -10px;
+}
+*/
+/* Customizing dataframe (pandas) / Table */
+.dataframe { /* dataframe atau table */
+    background: white;
+    box-shadow: 0px 1px 2px #bbb;
+}
+.dataframe thead th, .dataframe tbody td {
+    text-align: center;
+    padding: 1em;
+}
+
+@font-face {
+  font-family: 'Fira Code';
+  src: url("https://cdn.rawgit.com/dunovank/jupyter-themes/1e851888/jupyterthemes/fonts/monospace/firacode/firacode.otf") format("opentype");
+}
+
+.CodeMirror {
+  font-family: 'Fira Code';
+  font-variant-ligatures: initial;
+}
+
+.cm-string {
+    font-variant-ligatures: none;
+}
