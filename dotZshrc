@@ -5,3 +5,7 @@ precmd() { vcs_info }
 # Set up the prompt (with git branch name)
 setopt PROMPT_SUBST
 PROMPT='%F{blue}%1~%f${vcs_info_msg_0_} > '
+
+# For macport (with miniconda installed)
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+export PATH="${PATH}:/Users/madhusudan/Library/Python/3.10/bin"
