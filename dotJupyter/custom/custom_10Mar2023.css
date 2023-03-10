@@ -1,0 +1,17 @@
+/* ================================
+              NOTEBOOK
+   ================================ */
+
+.notebook_app {
+    /* Make background all white */
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+    font-weight: normal;
+}
+
+#notebook-container {
+    /* Remove shadow so that it looks like a page of a PDF doc */
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    padding: 0;
+}
