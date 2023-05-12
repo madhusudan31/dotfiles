@@ -1,0 +1,22 @@
+name: metsci
+
+channels:
+    - conda-forge
+    - nodefaults
+
+dependencies:
+  - python=3.10
+  - ipykernel
+  - ipywidgets
+  - ipython
+  - pip
+  # scientific stack (data handling and plotting)
+  - geopandas
+  - rioxarray
+  - netCDF4
+  - pycwt
+  - openpyxl
+  - dask
+  - plotly
+  - seaborn
+  - qtconsole
